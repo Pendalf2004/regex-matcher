@@ -9,6 +9,15 @@ It supports a simplified regular expression syntax:
 
 The matcher is implemented with dynamic programming and includes JUnit 5 tests for valid matches, invalid matches, and invalid pattern input.
 
+## Download Windows build
+
+The repository includes a GitHub Actions workflow that builds a Windows launcher executable.
+
+1. Open the `Actions` tab in GitHub
+2. Run the `Build Windows EXE` workflow, or use the latest successful run on `main`
+3. Download the `regex-matcher-windows` artifact
+4. Open the `RegexMatcher` folder inside the artifact and run `RegexMatcher.exe`
+
 ## Run
 
 ```bash
@@ -22,3 +31,11 @@ You can also start the app without arguments and enter the string and pattern in
 ```bash
 ./gradlew test
 ```
+
+## Build Windows launcher locally
+
+```powershell
+.\gradlew.bat packageWindowsExe
+```
+
+The generated Windows application files will be placed in `build/jpackage/RegexMatcher`.
